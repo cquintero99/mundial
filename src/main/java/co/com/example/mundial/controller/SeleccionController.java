@@ -18,7 +18,7 @@ import co.com.example.mundial.entities.Seleccion;
 import co.com.example.mundial.repository.ISeleccionRepository;
 
 @RestController
-@RequestMapping("/seleccion")
+@RequestMapping("/selecciones")
 @CrossOrigin
 public class SeleccionController {
 	@Autowired
@@ -56,7 +56,7 @@ public class SeleccionController {
 		if(seleccionCurrent.isPresent()) {
 			Seleccion seleccionReturn =seleccionCurrent.get();
 			seleccionReturn.setNombre(seleccion.getNombre());
-			seleccionReturn.setIdContinente(seleccion.getIdContinente());
+			seleccionReturn.setContinente(seleccion.getContinente());
 			seleccionReturn.setGrupo(seleccion.getGrupo());
 			seleccionRepository.save(seleccionReturn);
 			return seleccionReturn;
