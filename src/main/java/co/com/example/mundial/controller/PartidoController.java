@@ -26,6 +26,20 @@ public class PartidoController {
 		return partidoRepository.findAll();
 	}
 	
+	@GetMapping("/{id}/resultados")
+	public List<Resultado> partidoResultado(@PathVariable Integer id){
+		Optional<Partido>partido=partidoRepository.findById(id);
+		if(partido.isPresent()) {
+			return partido.get().getResultados();
+		}
+		return null;
+	}
+	
+
+	
+	
+	
+	
 	
 	
 	

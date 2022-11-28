@@ -41,7 +41,7 @@ public class ResultadoController {
 			Optional<Resultado>resultadoCurrent=resultadoRepository.findById(id);
 			if(resultadoCurrent.isPresent()) {
 				Resultado resultadoReturn=resultadoCurrent.get();
-				resultadoReturn.setPartidoId(resultado.getPartidoId());
+				resultadoReturn.setPartido(resultado.getPartido());
 				resultadoReturn.setSeleccionId(resultado.getSeleccionId());
 				resultadoReturn.setGoles(resultado.getGoles());
 				resultadoReturn.setRojas(resultado.getRojas());

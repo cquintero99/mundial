@@ -16,7 +16,7 @@ public class Resultado {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "resultado_id_seq")
 	private Integer id;
 	@Column(name="partido_id")
-	private Integer partidoId;
+	private Integer partido;
 	@Column(name="seleccion_id")
 	private Integer seleccionId;
 	private Integer goles;

@@ -26,6 +26,10 @@ public class Partido {
 	@ManyToOne
 	@JoinColumn(name="estadio_id")
 	private Estadio estadio;
+	@JsonIgnore
+	@OneToMany(mappedBy = "partido")
+	private List<Resultado>resultados;
+	
 	
 
 }
