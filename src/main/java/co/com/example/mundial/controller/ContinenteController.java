@@ -18,9 +18,9 @@ import co.com.example.mundial.entities.Continente;
 import co.com.example.mundial.repository.IContinenteRepository;
 
 @RestController
-@RequestMapping("/continente")
+@RequestMapping("/continentes")
 @CrossOrigin
-public class ContienenController {
+public class ContinenteController {
 	
 	@Autowired
 	IContinenteRepository continenteRepository;

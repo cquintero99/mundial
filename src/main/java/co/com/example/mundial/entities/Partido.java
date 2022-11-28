@@ -1,12 +1,18 @@
 package co.com.example.mundial.entities;
 
 import java.util.Date;
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.SequenceGenerator;
 import lombok.Data;
 @Data
@@ -17,7 +23,9 @@ public class Partido {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "partido_id_seq")
 	private Integer id;
 	private Date fecha;
-	@Column(name="estadio_id")
-	private Integer estadioId;
+	@ManyToOne
+	@JoinColumn(name="estadio_id")
+	private Estadio estadio;
+	
 
 }

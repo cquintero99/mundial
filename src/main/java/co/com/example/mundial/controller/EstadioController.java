@@ -1,6 +1,5 @@
 package co.com.example.mundial.controller;
 
-import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,25 +9,24 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import co.com.example.mundial.entities.Partido;
-import co.com.example.mundial.entities.Resultado;
-import co.com.example.mundial.repository.IPartidoRepository;
+import co.com.example.mundial.entities.Estadio;
+import co.com.example.mundial.repository.IEstadioRepository;
 
 @RestController
-@RequestMapping("/partidos")
+@RequestMapping("/estadios")
 @CrossOrigin
-public class PartidoController {
+public class EstadioController {
+	
 	@Autowired
-	IPartidoRepository partidoRepository;
+	IEstadioRepository estadioRepository;
 	
-	@GetMapping
-	public List<Partido>lista(){
-		return partidoRepository.findAll();
+	@GetMapping("/{id}")
+	public Optional<Estadio> finEstadioById(@PathVariable Integer id){
+		Optional<Estadio> estadio=estadioRepository.findById(id);
+		if(estadio.isPresent()) {
+			return estadio;
+		}
+		return null;
 	}
-	
-	
-	
-	
-	
 
 }
