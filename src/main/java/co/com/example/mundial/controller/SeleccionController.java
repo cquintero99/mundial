@@ -37,6 +37,11 @@ public class SeleccionController {
 		return null;
 		
 	}
+	@GetMapping("/grupo/{grupo}")
+	public List<Seleccion> seleccionByGrupo(@PathVariable String grupo){
+		
+		return seleccionRepository.findByGrupo(grupo);
+	}
 	
 	@PostMapping
 	public Seleccion postSeleccion(@RequestBody Seleccion seleccion) {
