@@ -1,5 +1,7 @@
 package co.com.example.mundial.entities;
 
+import java.io.Serializable;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -9,7 +11,7 @@ import lombok.Data;
 
 @Data
 @Entity
-public class Continente {
+public class Continente implements Serializable {
 	@Id
 	@SequenceGenerator(name="seleccion_id_seq",allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "seleccion_id_seq")
